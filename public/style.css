@@ -1,7 +1,29 @@
 body {
-  background-color: blue;
+  background-color: #daddc8;
+  color: #1460aa;
+}
+main {
+  margin-top: 20px;
 }
 
-h1 {
+.navbar {
+  background-color: #B5BFF2;
+}
+
+.list-group {
+  margin-top: 20px;
+}
+
+.list-group-item {
+  background-color: #B5BFF2;
+}
+
+.list-group-item{
+  background-color: #B5BFF2;
+}
+
+.result {
+  margin-top: 100px;
+  text-align: center;
 
 }
