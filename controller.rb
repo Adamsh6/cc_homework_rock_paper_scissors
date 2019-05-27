@@ -3,20 +3,30 @@ require('sinatra/contrib/all') if development?
 require('pry-byebug')
 
 require_relative('models/game.rb')
-also reload('models/*')
+also_reload('models/*')
 
-def rock_paper_shotgun(params)
-  game = Game.new(params[:player1] params[:player2])
+def rock_paper_scissors(params)
+  game = Game.new(params[:player1], params[:player2])
   return game.compare_choices
 end
 
-get '/:player1/:player2'
-  result = rock_paper_shotgun(params)
+get '/' do
+  erb( :home )
+end
+
+get '/:player1/:player2' do
+  result = rock_paper_scissors(params)
   if result == 0
-    return "It's a draw!"
+    @outcome = "It's a draw!"
   elsif result == 1
-    return "Player 1 won using #{player1}!"
+    @outcome = "Player 1 won using #{params[:player1]}!"
   else
-    return "Player 2 won using #{player2}"
+    @outcome = "Player 2 won using #{params[:player2]}"
   end
+  # return @outcome
+   erb( :result )
+end
+
+get '/:player1' do
+  erb( :next_pick)
 end
