@@ -28,5 +28,6 @@ get '/:player1/:player2' do
 end
 
 get '/:player1' do
+  @p1_choice = params[:player1]
   erb( :next_pick)
 end
