@@ -17,8 +17,8 @@ class TestGame < Minitest::Test
   end
 
   def test_get_player_choices
-    assert_equal("rock", @game_p1_win1.player_1)
-    assert_equal("scissors", @game_p1_win1.player_2)
+    assert_equal("rock", @game_p1_win1.player1)
+    assert_equal("scissors", @game_p1_win1.player2)
   end
 
   def test_compare_choices
@@ -32,4 +32,6 @@ class TestGame < Minitest::Test
     assert_equal(-1, @game_p2_win2.compare_choices)
     assert_equal(-1, @game_p2_win3.compare_choices)
   end
+
+  
 end
